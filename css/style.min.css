@@ -1534,7 +1534,9 @@ nav.popup-menu .close-menu-btn img {
     padding: 5px 5px 5px 18px;
     margin-right: 5px
 }
-
+#services {
+    position: relative;
+}
 .services-slider {
     display: flex;
     margin: 0 auto;
@@ -1547,6 +1549,7 @@ nav.popup-menu .close-menu-btn img {
     margin-right: 6px;
     margin-left: 6px;
     width: 210px
+    
 }
 
 .services-slider .slide img {
@@ -2657,7 +2660,8 @@ p.personal-data input[type=checkbox]:checked+label:before {
         margin-right: 0;
         width: 100%;
         text-align: center;
-        margin-bottom: 12px
+        margin-bottom: 12px;
+        
     }
 
     header .head .call p {
