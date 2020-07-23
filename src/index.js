@@ -11,6 +11,10 @@ import 'fetch-polyfill';
 import 'mdn-polyfills/Node.prototype.append';
 
 
+import selectClub from './moduls/selectClub';
+import togglePopUp from './moduls/togglePopUp';
+import gift from './moduls/gift';
+import mainSlider from './moduls/mainSlider';
 import burgerMenu from './moduls/burgerMenu';
 
 
@@ -18,5 +22,10 @@ import burgerMenu from './moduls/burgerMenu';
 
 
 
+
+selectClub();//club select
+togglePopUp();//modals
+gift();//gift
+mainSlider(); // main slider
 
 burgerMenu();
