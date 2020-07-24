@@ -1534,7 +1534,7 @@ nav.popup-menu .close-menu-btn img {
     padding: 5px 5px 5px 18px;
     margin-right: 5px
 }
-#services {
+#services{
     position: relative;
 }
 .services-slider {
@@ -1574,15 +1574,7 @@ nav.popup-menu .close-menu-btn img {
     margin: 0 auto
 }
 
-.services-slider .slider-arrow {
-    position: absolute;
-    top: 75px;
-    margin-top: -18px;
-    z-index: 100;
-    cursor: pointer
-}
-
-.services-slider .slider-arrow span {
+.slider-arrow__span {
     display: block;
     width: 36px;
     height: 37px;
@@ -1592,12 +1584,22 @@ nav.popup-menu .close-menu-btn img {
     padding-top: 11px
 }
 
-.services-slider .slider-arrow.prev {
-    left: 2px
+.slider-arrow__prev {
+    position: absolute;
+    top: 50%;
+    margin-top: -18px;
+    z-index: 100;
+    cursor: pointer;
+    left: 0
 }
 
-.services-slider .slider-arrow.next {
-    right: 2px
+.slider-arrow__next {
+    position: absolute;
+    top: 50%;
+    margin-top: -18px;
+    z-index: 99999;
+    cursor: pointer;
+    right: 0
 }
 
 #gallery {

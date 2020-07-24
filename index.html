@@ -270,9 +270,12 @@
                     <img src="images/services-slider/yoga.jpg" alt="Йога">
                     <h6>Йога</h6>
                     <p>Йога - идеальны не только физическая форма, но и эмоциональное состояние</p>
-                </div>
+                </div>                   
             </div>
+            <span class='slider-arrow__prev slider-arrow__span'><</span>
+            <span class='slider-arrow__next slider-arrow__span'>></span>
         </div>
+        
     </div>
 </section>
 <section id="gallery">
@@ -521,7 +524,9 @@
 	
 	const carousel = new SliderCarousel({
 		main: '.services-wrapper',
-		wrap: '.services-slider',
+        wrap: '.services-slider',
+        next: '.slider-arrow__next',
+        prev: '.slider-arrow__prev',
 		slidesToShow: 4,
 		infinity: true,
 		responsive: [{
