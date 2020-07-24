@@ -1613,6 +1613,7 @@ nav.popup-menu .close-menu-btn img {
 }
 
 #gallery .gallery-slider {
+    position: relative;
     padding-left: 75px;
     padding-right: 75px;
     max-width: 900px;
@@ -1623,6 +1624,11 @@ nav.popup-menu .close-menu-btn img {
 #gallery .gallery-slider .slide {
     margin: 0 auto !important;
     width: 100%
+}
+#gallery .gallery-slider .slide-active {
+    opacity: 1;
+    -webkit-transition: opacity .5s;
+    transition: opacity .5s
 }
 
 #gallery .gallery-slider .slider-arrow {
@@ -1655,6 +1661,29 @@ nav.popup-menu .close-menu-btn img {
     left: 50%;
     margin-left: -65px;
     bottom: 5%
+}
+.slider-dots .dot {
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    margin: 0 10px;
+    border-radius: 50%;
+    border: solid #fff;
+    display: inline-block;
+    -webkit-transition: background-color, -webkit-transform .4s;
+    transition: background-color, transform .4s, -webkit-transform .4s
+}
+
+.slider-dots .dot-active {
+    background-color: #19b5fe;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2)
+}
+
+.slider-dots .dot:hover {
+    background-color: #53c6fe;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2)
 }
 
 #cards {
