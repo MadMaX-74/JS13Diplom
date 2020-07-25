@@ -1,18 +1,23 @@
 const selectClub = () => {
-    const selectList = document.querySelector('.club-select .clubs-list ul');
-    const body = document.querySelector('body');
+    const clubsList = document.querySelector('.clubs-list');
+    const ul = clubsList.querySelectorAll('ul');
 
-    body.addEventListener('click', event => {
-        const target = event.target;
+    document.addEventListener('click', e => {
+        const target = e.target;
         if (target.closest('.club-select')) {
-            selectList.style.display = 'block';
+            ul.forEach(elem => {
+                if (elem.style.display === 'none' || !elem.style.display) {
+                    elem.style.display = 'block';
+                } else {
+                    elem.style.display = 'none';
+                }
+            });
         } else {
-            selectList.style.display = 'none';
+            ul.forEach(elem => {
+                elem.style.display = 'none';
+            });
         }
     });
-
-
 };
-
 
 export default selectClub;

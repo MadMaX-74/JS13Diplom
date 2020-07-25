@@ -16,13 +16,10 @@ import togglePopUp from './moduls/togglePopUp';
 import gift from './moduls/gift';
 import mainSlider from './moduls/mainSlider';
 import slider from './moduls/slider';
+import fixedMenu from './moduls/fixedMenu';
 import burgerMenu from './moduls/burgerMenu';
 import arrow from './moduls/arrow';
 import calc from './moduls/calc';
-
-
-
-
 
 
 selectClub();//club select
@@ -30,6 +27,7 @@ togglePopUp();//modals
 gift();//gift
 mainSlider(); // main slider
 slider();//slider
+fixedMenu();
 burgerMenu();//burger
 arrow();
 calc();
