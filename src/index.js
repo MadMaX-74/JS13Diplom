@@ -15,7 +15,7 @@ import selectClub from './moduls/selectClub';
 import togglePopUp from './moduls/togglePopUp';
 import gift from './moduls/gift';
 import mainSlider from './moduls/mainSlider';
-import slider from './moduls/slider';
+//import slider from './moduls/slider';
 import fixedMenu from './moduls/fixedMenu';
 import burgerMenu from './moduls/burgerMenu';
 import arrow from './moduls/arrow';
@@ -26,7 +26,7 @@ selectClub();//club select
 togglePopUp();//modals
 gift();//gift
 mainSlider(); // main slider
-slider();//slider
+//slider();//slider
 fixedMenu();
 burgerMenu();//burger
 arrow();
