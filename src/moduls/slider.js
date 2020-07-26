@@ -1,91 +1,63 @@
 const slider = () => {
-    const slide = document.querySelectorAll('.gallery-slider .slide'),
-        slider = document.querySelector('.gallery-slider'),
-        dotsList = document.querySelector('.slider-dots');
+    const sliderGallery = document.querySelector('.gallery-slider'),
+        slide = document.querySelectorAll('.gallery-slider .slide'),
+        galleryWrap = document.querySelector('.gallery-wrapper');
 
-    let currentSlide = 0,
-        interval;
+    const prev = document.createElement('span');
+    const next = document.createElement('span');
 
-    const dotsAdd = () => {
-        slide.forEach(() => {
-            const dot = document.createElement('li');
-            dot.classList.add('dot');
-            dotsList.append(dot);
-        });
-    };
-    dotsAdd();
 
-    const dot = document.querySelectorAll('.dot');
-    const prevSlide = (elem, index, strClass) => {
-        elem[index].classList.remove(strClass);
-    };
-    const nextSlide = (elem, index, strClass) => {
-        elem[index].classList.add(strClass);
-    };
+    prev.className = 'slider-arrow__span slider-arrow__prev ';
+    next.className = 'slider-arrow__span  slider-arrow__next ';
 
-    const autoPlaySlide = () => {
-        prevSlide(slide, currentSlide, 'slide-active');
-        prevSlide(dot, currentSlide, 'dot-active');
-        currentSlide++;
-        if (currentSlide >= slide.length) {
-            currentSlide = 0;
+    prev.textContent = '<';
+    next.textContent = '>';
+
+    galleryWrap.style.position = 'relative';
+    galleryWrap.appendChild(prev);
+    galleryWrap.appendChild(next);
+
+
+    let slideIndex = 0;
+    showSlides(slideIndex);
+
+    /* Функция увеличивает индекс на 1, показывает следующй слайд*/
+    function plusSlide() {
+        showSlides(slideIndex += 1);
+    }
+
+    /* Функция уменьшяет индекс на 1, показывает предыдущий слайд*/
+    function minusSlide() {
+        showSlides(slideIndex -= 1);
+    }
+
+    /* Устанавливает текущий слайд */
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    /* Основная функция слайдера */
+    function showSlides(n) {
+        let i;
+        if (n > slide.length) {
+            slideIndex = 1;
         }
-        nextSlide(slide, currentSlide, 'slide-active');
-        nextSlide(dot, currentSlide, 'dot-active');
-    };
-    const startSlide = (time = 3000) => {
-        interval = setInterval(autoPlaySlide, time);
-    };
-    const stopSlide = () => {
-        clearInterval(interval);
-    };
-    slider.addEventListener('click', event => {
-        event.preventDefault();
-
-        const target = event.target;
-
-        if (!target.matches('.slider-dots, .dot')) {
-            return;
+        if (n < 1) {
+            slideIndex = slide.length;
         }
-
-        prevSlide(slide, currentSlide, 'slide-active');
-        prevSlide(dot, currentSlide, 'dot-active');
-
-        if (target.matches('#arrow-right')) {
-            currentSlide++;
-        } else if (target.matches('#arrow-left')) {
-            currentSlide--;
-        } else if (target.matches('.dot')) {
-            dot.forEach((elem, index) => {
-                if (elem === target) {
-                    currentSlide = index;
-                }
-            });
+        for (i = 0; i < slide.length; i++) {
+            slide[i].style.display = "none";
         }
+        /* for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        } */
+        slide[slideIndex - 1].style.display = "block";
+        /* dots[slideIndex - 1].className += " active"; */
+    }
 
-        if (currentSlide >= slide.length) {
-            currentSlide = 0;
-        }
-        if (currentSlide < 0) {
-            currentSlide = slide.length - 1;
-        }
+    prev.addEventListener('click', minusSlide);
+    next.addEventListener('click', plusSlide);
 
-        nextSlide(slide, currentSlide, 'slide-active');
-        nextSlide(dot, currentSlide, 'dot-active');
-    });
-
-    slider.addEventListener('mouseover', event => {
-        if (event.target.matches('.slider-arrow') || event.target.matches('.dot')) {
-            stopSlide();
-        }
-    });
-    slider.addEventListener('mouseout', event => {
-        if (event.target.matches('.slider-arrow') || event.target.matches('.dot')) {
-            stopSlide();
-        }
-    });
-
-    startSlide(1500);
 };
 
 export default slider;
