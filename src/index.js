@@ -29,7 +29,7 @@ selectClub();//club select
 togglePopUp();//modals
 gift();//gift
 mainSlider(); // main slider
-slider();//slider
+slider();//slide
 fixedMenu();
 burgerMenu();//burger
 arrow();
