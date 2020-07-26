@@ -8,8 +8,8 @@ const slider = () => {
     prev.className = 'slider-arrow__span slider-arrow__prev slider-arrow';
     next.className = 'slider-arrow__span  slider-arrow__next slider-arrow';
 
-    prev.innerHTML = '<img src="../images/arrow-left.png">';
-    next.innerHTML = '<img src="../images/arrow-right.png">';
+    prev.innerHTML = '<img src="images/arrow-left.png">';
+    next.innerHTML = '<img src="images/arrow-right.png">';
 
     galleryWrap.style.position = 'relative';
     galleryWrap.appendChild(prev);
