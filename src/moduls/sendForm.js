@@ -27,7 +27,7 @@ const sendForm = form => {
         for (const key in elementsForm) {
             const elem = elementsForm[key];
             if (elem.parentNode.classList.contains('club') && !elem.checked) {
-                delete elementsForm[key];
+                elementsForm[key];
             }
         }
         elementsForm = elementsForm.filter(String);
@@ -84,13 +84,15 @@ const sendForm = form => {
                 .then(response => {
                     if (response.status !== 200) {
                         if (form.id === 'banner-form' ||
-							form.id === 'footer_form') {
+							form.id === 'footer_form' || form.id === 'form2' ||
+                            form.id === 'form1') {
                             mainForm(false);
                             statusMessage.remove();
                         }
                         throw new Error('status network not 200');
                     } else if (form.id === 'banner-form' ||
-						form.id === 'footer_form') {
+						form.id === 'footer_form' || form.id === 'form2' ||
+                        form.id === 'form1') {
                         mainForm(true);
                         statusMessage.remove();
                     } else {
