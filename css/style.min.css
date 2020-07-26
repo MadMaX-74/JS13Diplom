@@ -1623,9 +1623,11 @@ nav.popup-menu .close-menu-btn img {
 
 #gallery .gallery-slider .slide {
     margin: 0 auto !important;
-    width: 100%
+    width: 100%;
+    display: none;
 }
-#gallery .gallery-slider .slide-active {
+#gallery .gallery-slider .active-slide {
+    display: block;
     opacity: 1;
     -webkit-transition: opacity .5s;
     transition: opacity .5s
@@ -1646,7 +1648,7 @@ nav.popup-menu .close-menu-btn img {
     background-color: #f4c71b;
     border-radius: 50%;
     text-align: center;
-    padding-top: 11px
+    padding-top: 15px
 }
 
 #gallery .gallery-slider .slider-arrow.prev {
@@ -1662,29 +1664,7 @@ nav.popup-menu .close-menu-btn img {
     margin-left: -65px;
     bottom: 5%
 }
-.slider-dots .dot {
-    cursor: pointer;
-    height: 16px;
-    width: 16px;
-    margin: 0 10px;
-    border-radius: 50%;
-    border: solid #fff;
-    display: inline-block;
-    -webkit-transition: background-color, -webkit-transform .4s;
-    transition: background-color, transform .4s, -webkit-transform .4s
-}
 
-.slider-dots .dot-active {
-    background-color: #19b5fe;
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2)
-}
-
-.slider-dots .dot:hover {
-    background-color: #53c6fe;
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2)
-}
 
 #cards {
     padding-bottom: 4rem

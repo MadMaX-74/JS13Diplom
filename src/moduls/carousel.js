@@ -129,8 +129,8 @@ class SliderCarousel {
         this.prev.className = 'slider-arrow__span slider-arrow__prev glo-slider__prev';
         this.next.className = 'slider-arrow__span  slider-arrow__next glo-slider__next';
 
-        this.prev.textContent = '<';
-        this.next.textContent = '>';
+        this.prev.innerHTML = '<img src="../images/arrow-left.png">';
+        this.next.innerHTML = '<img src="../images/arrow-right.png">';
 
         this.main.appendChild(this.prev);
         this.main.appendChild(this.next);
