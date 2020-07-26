@@ -59,12 +59,15 @@ class SliderCarousel {
         style.textContent = `
             .glo-slider{
                 overflow: hidden !important;                
-                margin: 0 auto;             
+                margin: 0 auto;
+                padding: 0;
             }
             .glo-slider__wrap{             
                 display: flex !important; 
                 transition: transform 0.5s !important;
                 will-change: transform !important;
+                padding: 0;
+                
             }
             .glo-slider__item{
                 display:flex !important;
@@ -84,7 +87,7 @@ class SliderCarousel {
                 
             }
             .glo-slider__next{
-                right: 0px;
+                right: 0;
             }
         `;
 
@@ -125,6 +128,9 @@ class SliderCarousel {
 
         this.prev.className = 'slider-arrow__span slider-arrow__prev glo-slider__prev';
         this.next.className = 'slider-arrow__span  slider-arrow__next glo-slider__next';
+
+        this.prev.textContent = '<';
+        this.next.textContent = '>';
 
         this.main.appendChild(this.prev);
         this.main.appendChild(this.next);
