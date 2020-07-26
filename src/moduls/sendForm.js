@@ -27,7 +27,7 @@ const sendForm = form => {
         for (const key in elementsForm) {
             const elem = elementsForm[key];
             if (elem.parentNode.classList.contains('club') && !elem.checked) {
-                elementsForm[key];
+                delete elementsForm[key];
             }
         }
         elementsForm = elementsForm.filter(String);
