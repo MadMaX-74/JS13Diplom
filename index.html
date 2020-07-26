@@ -217,9 +217,8 @@
     </div>
 </section>
 <section id="services">    
-        <div class="wrapper"> 
+        <div class="wrapper services-wrapper"> 
             <h2>услуги наших клубов</h2>       
-        <div class="services-wrapper">
             <div class="services-slider">
                 <div class="slide">
                     <img src="images/services-slider/akva.jpg" alt="Аква территория">
@@ -271,10 +270,7 @@
                     <h6>Йога</h6>
                     <p>Йога - идеальны не только физическая форма, но и эмоциональное состояние</p>
                 </div>                   
-            </div>
-            <span class='slider-arrow__prev slider-arrow__span'><</span>
-            <span class='slider-arrow__next slider-arrow__span'>></span>            
-        </div>
+            </div> 
         
         
     </div>
@@ -298,12 +294,7 @@
                 </li>
                 <li class="slide">
                     <img src="images/gallery/photo5.jpg" alt="">
-                </li>
-                <a href="#" class="slider-arrow prev" id="arrow-left"><span></span></a>
-                <a href="#" class="slider-arrow next" id="arrow-right"><span></span></a>
-                <ul class="slider-dots">
-                    
-                </ul>
+                </li>                
             </ul>
         </div>
     </div>
@@ -343,7 +334,7 @@
                     </label>
                     </div>
                     <div class="price">
-                        <div class="price-message input-text"><input name="name" type="text" required
+                        <div class="price-message input-text"><input name="name" type="text"
                                                                      placeholder="Промокод"></div>
                         <div class="price-message">Цена:</div>
                         <div class="price-message" id="price-total">2999</div>
@@ -525,33 +516,6 @@
     </div>
 
 </div>
-<script src="./dist/carousel.js"></script>
-<script>
-	
-	const carousel = new SliderCarousel({
-		main: '.services-wrapper',
-        wrap: '.services-slider',
-        next: '.slider-arrow__next',
-        prev: '.slider-arrow__prev',
-		slidesToShow: 4,
-		infinity: true,
-		responsive: [{
-			breakpoint: 1024,
-			slidesToShow: 3
-		},
-		{
-			breakpoint: 768,
-			slidesToShow: 2
-		},
-		{
-			breakpoint: 576,
-			slidesToShow: 1
-		}
-	]
-
-	});
-	carousel.init();
-</script>
 
 </body>
 </html>

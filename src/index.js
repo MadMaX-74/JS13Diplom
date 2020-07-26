@@ -20,6 +20,9 @@ import fixedMenu from './moduls/fixedMenu';
 import burgerMenu from './moduls/burgerMenu';
 import arrow from './moduls/arrow';
 import calc from './moduls/calc';
+import carousel from './moduls/carousel';
+import formValidation from './moduls/formValidation';
+import sendForm from './moduls/sendForm';
 
 
 selectClub();//club select
@@ -31,3 +34,13 @@ fixedMenu();
 burgerMenu();//burger
 arrow();
 calc();
+carousel.init();
+sendForm(document.getElementById('form1'));
+sendForm(document.getElementById('form2'));
+sendForm(document.getElementById('banner-form'));
+sendForm(document.getElementById('footer_form'));
+formValidation('#form1', '#callback_form1-phone');
+formValidation('#form2', '#callback_form2-phone');
+formValidation('#banner-form', '#phone');
+formValidation('#footer_form', '#callback_footer_form-phone');
+

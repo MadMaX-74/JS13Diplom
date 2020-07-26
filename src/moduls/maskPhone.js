@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 function maskPhone(selector, masked = '+7 (___) ___-__-__') {
     const elems = document.querySelectorAll(selector);
 

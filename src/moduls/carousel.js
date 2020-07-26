@@ -59,7 +59,7 @@ class SliderCarousel {
         style.textContent = `
             .glo-slider{
                 overflow: hidden !important;                
-                margin: 0 10px;
+                margin: 0 auto;             
             }
             .glo-slider__wrap{             
                 display: flex !important; 
@@ -81,6 +81,7 @@ class SliderCarousel {
             }
             .glo-slider__prev{
                 left: 0;
+                
             }
             .glo-slider__next{
                 right: 0px;
@@ -118,39 +119,15 @@ class SliderCarousel {
     }
 
     addArrow() {
-        this.prev = document.createElement('button');
-        this.next = document.createElement('button');
+        this.prev = document.createElement('span');
+        this.next = document.createElement('span');
 
-        this.prev.className = 'glo-slider__prev';
-        this.next.className = 'glo-slider__next';
+
+        this.prev.className = 'slider-arrow__span slider-arrow__prev glo-slider__prev';
+        this.next.className = 'slider-arrow__span  slider-arrow__next glo-slider__next';
 
         this.main.appendChild(this.prev);
         this.main.appendChild(this.next);
-
-        const style = document.createElement('style');
-        style.textContent = `
-            .glo-slider__prev,
-            .glo-slider__next{
-                margin: 0 10px;
-                border: 20px solid transparent;
-                background: transparent;
-            }
-            .glo-slider__next{
-                border-left-color: #ffd11a;
-            }
-            .glo-slider__prev{
-                border-right-color: #ffd11a;
-            }
-            .glo-slider__prev:hover,
-            .glo-slider__next:hover,
-            .glo-slider__prev:focus,
-            .glo-slider__next:focus{
-                background: transparent;
-                outline: transparent;
-            }
-        `;
-
-        document.head.appendChild(style);
     }
 
     responseInit() {
@@ -180,4 +157,28 @@ class SliderCarousel {
     }
 }
 
+
+const carousel = new SliderCarousel({
+    main: '.services-wrapper',
+    wrap: '.services-slider',
+    next: '.slider-arrow__next',
+    prev: '.slider-arrow__prev',
+    slidesToShow: 4,
+    infinity: true,
+    responsive: [{
+        breakpoint: 1024,
+        slidesToShow: 3
+    },
+    {
+        breakpoint: 768,
+        slidesToShow: 2
+    },
+    {
+        breakpoint: 576,
+        slidesToShow: 1
+    }
+    ]
+
+});
+export default carousel;
 

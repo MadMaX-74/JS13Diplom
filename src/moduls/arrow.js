@@ -4,17 +4,18 @@
 const arrow = () => {
     const arrowUp = document.getElementById('totop');
     arrowUp.style.display = 'none';
-    const headerMain = document.querySelector('.header-main');
+    const headerMain = document.querySelector('.header-main'),
+        headerMainHeight = headerMain.clientHeight;
 
-    document.addEventListener('scroll', () => {
+    window.addEventListener('scroll', () => {
 
-        if (window.pageYOffset > headerMain.getBoundingClientRect().height) {
-
+        if (window.pageYOffset > headerMainHeight) {
             arrowUp.style.display = 'block';
-
         } else {
             arrowUp.style.display = 'none';
         }
+
+
     });
 };
 
